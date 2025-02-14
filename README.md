@@ -54,9 +54,9 @@ for i in range(5):
     print(i)
 ```
 ### Ejemplos de listas
-- [x] Paso 1
-- [ ] Paso 2
-- [ ] Paso 3
+- [x] Turn on GitHub Pages
+- [ ] Outline my portfolio
+- [ ] Introduce myself to the world
 
 
 #Referencias :link:
