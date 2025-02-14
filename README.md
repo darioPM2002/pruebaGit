@@ -1,4 +1,4 @@
-![Gitgub Logo](/asssets/github-logo-vector.png)
+![Gitgub Logo](/github-logo-vector.png)
 # Laboratorio-git  :star: :star: :star:
 ## Git es un servicio para crear repositorios, editarlos y trabajarolos tanto local, como vía remota. Hay una serie de pasos y comandos para poder hacer tus repositorios
 ________________________________________________________________
@@ -47,10 +47,22 @@ ________________________________________________________________
 Por último si queremos sincronizar nuestro repositorio local con el repositorio remoto se ingresa el siguiente código:
         git pull origin main
 
+### Ejemplos de códigos
+For Python
+```python
+for i in range(5):
+    print(i)
+```
+### Ejemplos de listas
+- [x] Paso 1
+- [ ] Paso 2
+- [ ] Paso 3
 
 
 #Referencias :link:
 
-* https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education
+* [Github documentation](https://docs.github.com/en)
 
-* https://education.github.com/pack 
+* [Github glossary](https://docs.github.com/en/get-started/learning-about-github/github-glossary)
+
+* [Git documentation](https://git-scm.com/doc)
