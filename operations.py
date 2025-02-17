@@ -5,4 +5,3 @@ b = int(input(“Give me the second number:”))
 
 # Display the subtraction
 
-# Display multiplication
