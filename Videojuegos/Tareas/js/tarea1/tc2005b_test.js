@@ -10,7 +10,7 @@
 "use strict";
 
 import { strictEqual, deepStrictEqual } from "assert";
-import * as tc2005b from "./tarea_15_funciones.js";
+import * as tc2005b from "./dario_pena_tarea1.js";
 
 
 describe("TC2005B Module Tests", () => {
