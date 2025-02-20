@@ -11,6 +11,8 @@
     },
     "logging": {
       "level": "info",
-      "file": "./logs/app.log"
+      "file": "./github-logo-vector.png",
+      "host": "192.5.5.1"
+      
     }
   }
