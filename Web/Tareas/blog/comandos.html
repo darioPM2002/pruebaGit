@@ -10,102 +10,111 @@
 <body>
     <div>
 
+        <!--Color de fondo-->
+
         <body style="background-color: rgb(0, 0, 0);"></body>
         <h1>Comandos Terminal :_</h1>
-        <hr> </hr>
+        <hr>
+        </hr>
         <h2>Lista de comandos</h2>
-        
+
     </div>
-    <div><table border="1">
-        <thead>
-            <tr>
-                <th>Comando</th>
-                <th>Descripción</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td colspan="2"><strong>Comandos de navegación</strong></td>
-            </tr>
-            <tr>
-                <td><em>pwd</em></td>
-                <td>Este comando te muestra en qué parte del directorio estás</td>
-            </tr>
-            <tr>
-                <td><em>cd &#60RUTA&#62</em></td>
-                <td>Este comando nos permite navegar a la ruta que escribas como argumento</td>
-            </tr>
-            <tr>
-                <td><em>cd ..</em></td>
-                <td>Regresas en un nivel tu posición en el directorio</td>
-            </tr>
-            <tr>
-                <td><em>touch &#60NOMBRE_ARCHIVO&#62</em></td>
-                <td>Este comando nos permite crear un nuevo archivo, con el nombre que pasas como argumento</td>
-            </tr>
-            <tr>
-                <td><em>ls</em></td>
-                <td>Nos muestra todos los archivos y carpetas de la raíz en donde estamos</td>
-            </tr>
-            <tr>
-                <td><em>ls -a</em></td>
-                <td>Nos muestra todos los archivos y carpetas incluyendo los archivos ocultos</td>
-            </tr>
-            <tr>
-                <td><em>mkdir "nombre"</em></td>
-                <td>Crea un nuevo directorio</td>
-            </tr>
-            <tr>
-                <td><em>rm "nombre_archivo.txt"</em></td>
-                <td>Elimina archivos o carpetas</td>
-            </tr>
-            <tr>
-                <td><em>cat "nombre_raiz.txt"</em></td>
-                <td>Muestra contenido de un archivo</td>
-            </tr>
-            <tr>
-                <td colspan="2"><strong>Comandos de Github</strong></td>
-            </tr>
-            <tr>
-                <td><em>git init</em></td>
-                <td>Inicia un repositorio local</td>
-            </tr>
-            <tr>
-                <td><em>ssh-keygen -t ed25519 -C "&#60ssh del repositorio&#60"</em></td>
-                <td>Creamos los archivos ssh locales</td>
-            </tr>
-            <tr>
-                <td><em>git clone "&#60Tú e-mail de github&#60"</em></td>
-                <td>Clonamos un repositorio a la raíz donde estamos</td>
-            </tr>
-            <tr>
-                <td><em>git add -A</em></td>
-                <td>Registra qué archivos nuevos hay en el repositorio para pasarlos a revisión</td>
-            </tr>
-            <tr>
-                <td><em>git commit -m "nombre del cambio"</em></td>
-                <td>Se guardan los cambios del repositorio</td>
-            </tr>
-            <tr>
-                <td><em>git status</em></td>
-                <td>Nos muestra el estatus de nuestro repositorio</td>
-            </tr>
-            <tr>
-                <td><em>git push -u origin main</em></td>
-                <td>Sube los cambios al repositorio en línea</td>
-            </tr>
-            <tr>
-                <td><em>git pull origin main</em></td>
-                <td>Baja los cambios del repositorio en línea</td>
-            </tr>
-            <tr>
-                <td colspan="2"><em>Más comandos</em> <a href="https://github.com/joshnh/Git-Commands" target="_blank">pulsa aquí</a></td>
-            </tr>
-        </tbody>
-    </table>
+    <!--tabla estilo de la tabla-->
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+
+                    <!--cabecera de la tabla-->
+                    <th>Comando</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2"><strong>Comandos de navegación</strong></td>
+                </tr>
+                <tr>
+                    <td><em>pwd</em></td>
+                    <td>Este comando te muestra en qué parte del directorio estás</td>
+                </tr>
+                <tr>
+                    <td><em>cd &#60RUTA&#62</em></td>
+                    <td>Este comando nos permite navegar a la ruta que escribas como argumento</td>
+                </tr>
+                <tr>
+                    <td><em>cd ..</em></td>
+                    <td>Regresas en un nivel tu posición en el directorio</td>
+                </tr>
+                <tr>
+                    <td><em>touch &#60NOMBRE_ARCHIVO&#62</em></td>
+                    <td>Este comando nos permite crear un nuevo archivo, con el nombre que pasas como argumento</td>
+                </tr>
+                <tr>
+                    <td><em>ls</em></td>
+                    <td>Nos muestra todos los archivos y carpetas de la raíz en donde estamos</td>
+                </tr>
+                <tr>
+                    <td><em>ls -a</em></td>
+                    <td>Nos muestra todos los archivos y carpetas incluyendo los archivos ocultos</td>
+                </tr>
+                <tr>
+                    <td><em>mkdir "nombre"</em></td>
+                    <td>Crea un nuevo directorio</td>
+                </tr>
+                <tr>
+                    <td><em>rm "nombre_archivo.txt"</em></td>
+                    <td>Elimina archivos o carpetas</td>
+                </tr>
+                <tr>
+                    <td><em>cat "nombre_raiz.txt"</em></td>
+                    <td>Muestra contenido de un archivo</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>Comandos de Github</strong></td>
+                </tr>
+                <tr>
+                    <td><em>git init</em></td>
+                    <td>Inicia un repositorio local</td>
+                </tr>
+                <tr>
+                    <td><em>ssh-keygen -t ed25519 -C "&#60ssh del repositorio&#60"</em></td>
+                    <td>Creamos los archivos ssh locales</td>
+                </tr>
+                <tr>
+                    <td><em>git clone "&#60Tú e-mail de github&#60"</em></td>
+                    <td>Clonamos un repositorio a la raíz donde estamos</td>
+                </tr>
+                <tr>
+                    <td><em>git add -A</em></td>
+                    <td>Registra qué archivos nuevos hay en el repositorio para pasarlos a revisión</td>
+                </tr>
+                <tr>
+                    <td><em>git commit -m "nombre del cambio"</em></td>
+                    <td>Se guardan los cambios del repositorio</td>
+                </tr>
+                <tr>
+                    <td><em>git status</em></td>
+                    <td>Nos muestra el estatus de nuestro repositorio</td>
+                </tr>
+                <tr>
+                    <td><em>git push -u origin main</em></td>
+                    <td>Sube los cambios al repositorio en línea</td>
+                </tr>
+                <tr>
+                    <td><em>git pull origin main</em></td>
+                    <td>Baja los cambios del repositorio en línea</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><em>Más comandos</em> <a href="https://github.com/joshnh/Git-Commands"
+                            target="_blank">pulsa aquí</a></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 
+    <!--estilo de fuente-->
     <style>
         body {
             background-color: rgb(253, 253, 253);
@@ -118,8 +127,10 @@
     </style>
     <h1></h1>
 </body>
+<!--Divider blanco-->
+<h1></h1>
 
-
+<!--Footer pie de página con la navegación entre pantallas-->
 <footer>
     <hr>Navega</hr>
 
@@ -130,8 +141,9 @@
                 <th><a href="comandos.html">Comandos terminal</a></th>
                 <th><a href="github.html">Flujo de trabajo Github</a></th>
             </tr>
-          </table>
-        </div>
+        </table>
+    </div>
 
 </footer>
+
 </html>
