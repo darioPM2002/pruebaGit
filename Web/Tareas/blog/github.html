@@ -1,22 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+
     <body style="background-color: rgb(0, 0, 0);"></body>
     <h1>Flujo de trabajo Github </h1>
-    
-    <a href="home.html">Regresar</a>
+    <p>GitHub es una plataforma de desarrollo colaborativo basada en la web que utiliza Git, un sistema de control de
+        versiones distribuido.</p>
+    <a href="https://github.com/">github.com</a>
+    <hr>
+    </hr>
+    <div>
+        <strong>Flujo básico</strong>
+        <div>
+            <em>Este flujo es el básico, excelente para un repositorio individual </em>
+        </div>
+
+        <ol>
+            <li>Crear un repositorio</li>
+            <p>En caso de que sólo necesites un repositorio local deberás correr git init, para crear un repositorio
+                deberás ingresar a github.com, y en la opción de crear un nuevo repositorio
+                debes crear uno configurandolo con las necesidades del proyecto (hacerlo privado, tipo de licencia,
+                agregar colaboradores etc.).
+            </p>
+            <li>Clonar un repositorio</li>
+            <p>Clonar un repositorio nos permite bajar un repositorio remoto a un repositorio local, con el fin de
+                trabajar en una copia de él. para esto ncesitas tener el ssh del repositorio
+                el cual encuentras en la página de github del repositorio, con el ssh, en tu computadora debes alojarte
+                en algún directorio en la terminal donde quieras bajar el repositorio remoto
+                con esto debes de ejecutar git clone &#60ssh del repositorio&#62, con esto tendras el repositorio remoto
+                de forma local
+            </p>
+
+            <li>Agregar cambios (Staging area)</li>
+            <p>Cuando hagas algún cambio en tu repositorio local y quieras guardar los cambios debes ejecutar git add
+                &#60nombre del archivo&#62 o git add -A el primero para salvar un archivo en específico y el segundo
+                para
+                salvar todos los archivos que hayas modificado, esto hace que los archvios pasen el staging area, es
+                decir los archvivos que se agregarán en el próximo commit
+            </p>
+            <li>Guardar cambios</li>
+            <p>Ya con los cambios agregados debes guardar esos cambios y generar historial de versiones, para esto se
+                ejecuta git commit -m "Mensaje descriptivo del cambio", el nombre del cambio se verá para tener un
+                control de qué pasó en esa versión
+            </p>
+            <li>Subir los cambios al repositorio remoto</li>
+            <p>
+                Una vez que tus cambios están listos y actualizados con la rama principal remota, sube tu rama al
+                repositorio remoto, la rama por defecto es main, pero puedes usar cualquiera que esté disponible
+                dependiendo del caso
+                el comando es git push origin nombre-de-la-rama
+            </p>
+            <li>IMPORTANTE</li>
+            <p>Hay dos comnandos los cuáles se deben ejecutar dependiendo cada programador pero son de suma importancia,
+                no entrar dentro del woekflow anterior debido a que es comun ejecutarlos entre cada paso, los comandos
+                son:</p>
+            <p>git pull origin "nombre de la rama" bajas todos los cambios del repositorio remoto al local, es decir
+                realizas actualizaciones al último estado</p>
+            <p>git status te muestra toda la información del repositorio, como los archivos en el staging areea</p>
+
+        </ol>
+    </div>
+
     <style>
         body {
-            background-color: rgb(253, 253, 253); /* Fondo amarillo claro */
-            font-family: Arial, sans-serif; /* Cambia la fuente del texto */
-            color: rgb(254, 254, 254); /* Color del texto */
+            background-color: rgb(253, 253, 253);
+            /* Fondo amarillo claro */
+            font-family: Arial, sans-serif;
+            /* Cambia la fuente del texto */
+            color: rgb(254, 254, 254);
+            /* Color del texto */
         }
     </style>
     <h1></h1>
 </body>
+
+<footer>
+    <hr>Navega</hr>
+
+    <div>
+        <table>
+            <tr>
+                <th><a href="home.html">Página de inicio</a></th>
+                <th><a href="comandos.html">Comandos terminal</a></th>
+                <th><a href="github.html">Flujo de trabajo Github</a></th>
+            </tr>
+        </table>
+    </div>
+
+</footer>
+
 </html>
