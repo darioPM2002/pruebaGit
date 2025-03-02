@@ -6,12 +6,13 @@ color: white;
 
 
 body{
-  background-color: black;
     background-color: black;
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
     overflow-y: scroll;
-    content: block;
+    height: 100vh;  /* Asegura que el body ocupe el 100% de la altura de la ventana */
+    margin: 0; /* Eliminar márgenes del body */
+    
 }
 
 header{
@@ -117,12 +118,12 @@ nav {
 
     text-align: center;
     
-}.background-image {
-    position: end;
-    top: 0;
+}
+.background-image {
+    position: fixed;
     left: 0;
     width: 100%;
-    height: 10%; 
+    height: 10%;
     object-fit: fill;
 }
 .center {
