@@ -9,8 +9,8 @@ body{
     background-color: black;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
-    overflow-y: scroll;
-    height: 100vh;  /* Asegura que el body ocupe el 100% de la altura de la ventana */
+    overflow-y: auto; 
+    height: 100%; 
     margin: 0; /* Eliminar márgenes del body */
     
 }
