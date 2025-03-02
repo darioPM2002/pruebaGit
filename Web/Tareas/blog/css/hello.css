@@ -1,36 +1,75 @@
-*{
-    margin: 10px;
-    
-}
 
-h1{
-    color: black;
-    border: white 1px solid;
-    padding: 20px;
-}
+
 
 body{
-    margin: 0px;
-    background-color: F2F2F2;
-}
-footer{
-    background-image: "../images/fondo.jpg";
-}
-footer p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 25px;
-    text-align
-    : center;
+    background-color: black;
+    font-family: 'Poppins', sans-serif; 
+    overflow: hidden;
+    content: block;
 }
 
+header{
 
-footer a{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(183, 183, 183);
-    font-weight: bold;
-    font-size: 15px;
-    text-align
-    : center;
+    text-align: center;
     
+}
+p{
+    color: white;
+}
+h1{
+    color: white;
+}
+.navigateBoton {
+    border: 3px solid white; /* Borde de 2 píxeles de grosor, color rojo */
+    padding: 20px; 
+    color: white;
+    border-radius: 21px;
+    font-size: 15px;
+    text-decoration: none;
+    
+    
+}
+.navigateBoton:hover {
+    border: 3px solid white; /* Borde de 2 píxeles de grosor, color rojo */
+    padding: 20px;
+    background-color: grey; 
+    color: white;
+    border-radius: 21px;
+    font-size: 15px;
+    text-decoration: none;
+    
+    
+}
+.titulosHome{
+    font-size: 60px;
+    padding-left: 25%;
+    padding-right: 25%;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+.subtitulosHome{
+    font-weight: 500;
+    padding: 0px;
+    padding-bottom: 50PX;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+nav {
+    display: flex;
+    justify-content: center; 
+    margin-top: 40px;
+    gap: 15px; 
+}
+
+.titulosCentrados{
+
+    text-align: center;
+    
+}.background-image {
+    position: end;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%; /* Abarca toda la altura disponible */
+    object-fit: fill; /* Ajusta la imagen para cubrir toda la pantalla sin deformarse */
 }
