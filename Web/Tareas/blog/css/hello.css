@@ -11,7 +11,7 @@ body{
     overflow-x: hidden;
     overflow-y: auto; 
     height: 100%; 
-    margin: 0; /* Eliminar márgenes del body */
+    margin: 0;
     
 }
 
@@ -34,7 +34,7 @@ h1{
     padding-left:10% ;
     padding-right:10% ;
     
-    background: rgba(43, 41, 43, 0); /* Fondo transparente oscuro */
+    background: rgba(43, 41, 43, 0); 
     box-shadow: 0 2px 32px 0 rgba(179, 38, 255, 0.246);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(10px);
@@ -46,19 +46,20 @@ h1{
     
     margin-left:10% ;
     margin-right:10% ;
+    margin-bottom:10px ;
     padding-top:2% ;
     padding-left:10% ;
     padding-right:10% ;
-    padding-bottom:10% ;
-    background: rgba(43, 41, 43, 0); /* Fondo transparente oscuro */
-    box-shadow: 0 2px 32px 0 rgba(179, 38, 255, 0.8);
+    padding-bottom:8% ;
+    background: rgba(43, 41, 43, 0); 
+    box-shadow: 0 2px 32px 0 rgba(179, 38, 255, 0.5);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 30px;
     border: 1px solid rgba(0, 0, 0, 0);
 }
 .navigateBoton {
-    border: 3px solid white; /* Borde de 2 píxeles de grosor, color rojo */
+    border: 3px solid white; 
     padding: 20px; 
     color: white;
     border-radius: 21px;
@@ -68,7 +69,7 @@ h1{
     
 }
 .navigateBoton:hover {
-    border: 3px solid white; /* Borde de 2 píxeles de grosor, color rojo */
+    border: 3px solid white; 
     padding: 20px;
     background-color: grey; 
     color: white;
@@ -79,7 +80,7 @@ h1{
     
 }
 .navButtons{
-    border: 3px solid grey; /* Borde de 2 píxeles de grosor, color rojo */
+    border: 3px solid grey; 
     padding: 20px;
     background-color: grey; 
 
@@ -104,6 +105,16 @@ h1{
     font-weight: 500;
     padding-left: 10%;
     padding-right: 10%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.subtitulosHome2{
+    text-align: center;
+    font-weight: 800;
+    padding-left: 5%;
+    padding-right:5%;
+    font-size: 30px;
     margin-top: 0px;
     margin-bottom: 0px;
 }
@@ -172,7 +183,7 @@ nav {
     padding-left:5% ;
     padding-right:5% ;
     margin-bottom: 20px;
-    background: rgba(43, 41, 43, 0); /* Fondo transparente oscuro */
+    background: rgba(43, 41, 43, 0); 
     box-shadow: 0 2px 32px 0 rgba(22, 48, 72, 0.534);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(10px);
@@ -189,7 +200,7 @@ nav {
     padding-left:5% ;
     padding-right:5% ;
     margin-bottom: 20px;
-    background: rgba(43, 41, 43, 0); /* Fondo transparente oscuro */
+    background: rgba(43, 41, 43, 0); 
     box-shadow: 0 2px 32px 0 rgba(38, 38, 255, 0.8);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(10px);
@@ -204,3 +215,16 @@ nav {
     margin-left:5% ;
     margin-right:5% ;
 }
+
+.tablaComandos{
+    border-collapse: separate; 
+    border-spacing: 20px; 
+
+
+}
+
+th, td {
+    border-bottom: 1px solid rgba(240, 240, 240, 0.338);
+    padding: 10px; 
+    text-align: left;
+  }
