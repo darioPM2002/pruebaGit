@@ -1,0 +1,36 @@
+*{
+    margin: 10px;
+    
+}
+
+h1{
+    color: black;
+    border: white 1px solid;
+    padding: 20px;
+}
+
+body{
+    margin: 0px;
+    background-color: F2F2F2;
+}
+footer{
+    background-image: "../images/fondo.jpg";
+}
+footer p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    text-align
+    : center;
+}
+
+
+footer a{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(183, 183, 183);
+    font-weight: bold;
+    font-size: 15px;
+    text-align
+    : center;
+    
+}
