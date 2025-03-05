@@ -1,0 +1,95 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+    
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-content: center;
+background-color: rgb(30, 29, 29);
+}
+
+
+header nav{
+    color: white;
+    display: flex;
+    margin: 18.72px;
+    gap: 10px;
+    
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+    display: flex;
+   
+    gap: 10px;
+    
+}
+header h3{
+    color: white;
+    text-decoration: none;
+    display: flex;
+   
+    gap: 10px;
+    
+}
+
+
+#suscribe{
+    background-color: rgb(30, 29, 29);
+    display: flex;
+    justify-content: center;
+}
+#suscribe p {
+    color: white;
+}
+
+#developmentArea{
+    
+    background-color: #ff9100;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    
+}
+
+#h1WebDV{
+    text-align: center;
+}
+
+#suscribe form{
+    margin: 16px;
+}
+
+
+#imagesrow {
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: #ff9100;
+}
+footer{
+    background-color: black;
+    color: white;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.columnImages{
+
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+
+
+}

@@ -109,6 +109,16 @@ h1{
     margin-bottom: 0px;
 }
 
+.columna{
+    
+    display: flex;
+    flex-direction: row;
+    color: white;
+    align-items: center;
+    align-self: center;
+
+
+}
 .subtitulosHome2{
     text-align: center;
     font-weight: 800;
