@@ -1,0 +1,6 @@
+*Un jugador puede tener muchos decks pero un deck sólo puede pertenecer a un jugador
+*Un deck puede tener muchas cartas y una carta puede puede pertenecer a muchos deck
+*Un carta tine un pokemon pero un pokemon puede pertenecer a varias cartas
+*Una carta puede tener varios poderes y varios poderes pueden estar en diferentes cartas
+*Un jugador solo puede tener una baraja actual, y la baraja actual sólo pertence a un jugador
+*Muchas barajas pueden tener una carta y muchas cartas pueden pertenecer a muchas barajas
