@@ -1,5 +1,6 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
 }
 header{
     
@@ -7,7 +8,9 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-content: center;
-background-color: rgb(30, 29, 29);
+background-color: rgba(37,64,75,255);
+padding-left: 5vh;
+padding-right: 5vh;
 }
 
 
@@ -28,6 +31,7 @@ header a{
     
 }
 header h3{
+    
     color: white;
     text-decoration: none;
     display: flex;
@@ -38,7 +42,7 @@ header h3{
 
 
 #suscribe{
-    background-color: rgb(30, 29, 29);
+    background-color: rgba(37,64,75,255);
     display: flex;
     justify-content: center;
 }
@@ -47,14 +51,15 @@ header h3{
 }
 
 #developmentArea{
-    
-    background-color: #ff9100;
+    color: white;
+    background-color: rgba(185,125,45,255);
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-content: center;
     padding-left: 50px;
     padding-right: 50px;
+    height: 45ch;
     
 }
 
@@ -68,14 +73,24 @@ header h3{
 
 
 #imagesrow {
-    color: white;
-    padding: 20px;
+    color: rgba(37,64,75,255);
+    padding: 30px;
     display: flex;
     flex-direction: row;
-    background-color: #ff9100;
+    background-color: white;
+    height: 20ch;
+    justify-content: center; 
+    align-items: center;
+}
+
+
+#imagesrowP{
+    padding-left: 10px;
+    padding-right: 10px;
+   
 }
 footer{
-    background-color: black;
+    background-color: rgba(37,64,75,255);
     color: white;
     display: flex;
     padding: 10px;
@@ -90,6 +105,7 @@ footer{
     flex-direction: column;
     
     align-items: center;
+    text-align: center;
 
 
 }
