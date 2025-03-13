@@ -15,7 +15,7 @@ const canvasHeight = 700;
 let oldTime;
 const paddleVelocity = 400; // Aumentado para mayor visibilidad
 const speedIncrease = 2;
-const initialSpeed = 800; // Aumentado para mejor movimiento
+const initialSpeed = 300; // Aumentado para mejor movimiento
 
 let leftScore = 0;
 let rightScore = 0;
@@ -25,16 +25,23 @@ let canvas;
 let ctx;
 
 //ladrillos:
-const brickWidth = 60;
-const brickHeight = 20;
-const brickRows = 5;
-const brickColumns = 10;
-const brickPadding = 10; // Espacio entre ladrillos
-const brickOffsetTop = 30; // Distancia desde la parte superior
-const brickOffsetLeft = 30; // Distancia desde la parte izquierda
+
+const brickHeight = 15;
+const brickRows = 10;
+const brickColumns = 15;
+const brickPadding = 5; // Espacio entre ladrillos
+const brickOffsetTop = 70; // Distancia desde la parte superior
+const brickOffsetLeft =40; // Distancia desde la parte izquierda
+const brickWidth = ((canvasWidth -150)/brickColumns);
 
 
+
+//variables juego
+let score = 0;
 let bricks = [];
+let player2Active = false;
+
+let vidas = 3 ;
 
 class Brick extends GameObject {
     constructor(position, width, height, color) {
@@ -51,7 +58,7 @@ for (let row = 0; row < brickRows; row++) {
     for (let col = 0; col < brickColumns; col++) {
         let x = brickOffsetLeft + col * (brickWidth + brickPadding);
         let y = brickOffsetTop + row * (brickHeight + brickPadding);
-        let color = "blue"; // Puedes cambiar el color de cada ladrillo si lo deseas
+        let color = "white"; 
         bricks.push(new Brick(new Vec(x, y), brickWidth, brickHeight, color));
     }
 }
@@ -66,7 +73,22 @@ function checkBrickCollisions() {
            
             brick.destroy();
           
-            leftScore++; // Incrementar puntaje al destruir un ladrillo
+            score++; // Incrementar puntaje al destruir un ladrillo
+
+            if (score >=(brickRows *brickColumns)) {
+                mostrarGameOverWin()
+            }
+        }
+        if (brick.active && boxOverlap(secondaryBox, brick)) {
+            console.log("Colisión con ladrillo");
+            secondaryBox.velocity = new Vec(   secondaryBox.velocity.x,secondaryBox.velocity.y*-1);
+           
+            brick.destroy();
+          
+            score++; // Incrementar puntaje al destruir un ladrillo
+            if (score >=(brickRows *brickColumns)) {
+                mostrarGameOverWin()
+            }
         }
     }
 }
@@ -74,7 +96,7 @@ function checkBrickCollisions() {
 class Ball extends GameObject {
     constructor(position, width, height, color) {
         super(position, width, height, color, "ball");
-        this.velocity = new Vec(0, 0); // Inicializar velocity
+        this.velocity = new Vec(0, 0); 
         this.reset();
     }
 
@@ -84,15 +106,44 @@ class Ball extends GameObject {
 
     initVelocity() {
         this.inPlay = true;
-        let angle = Math.random() * (Math.PI / 2) - (Math.PI / 4);
-        this.velocity = new Vec(Math.cos(angle), Math.sin(angle)).times(initialSpeed);
-        // Selecciona una dirección aleatoria
+   
+        let angle = Math.PI / 4; // 45 grados en radianes
+        this.velocity = new Vec(Math.cos(angle), -Math.sin(angle)).times(initialSpeed);
+    
         this.velocity.x *= (Math.random() < 0.5) ? 1 : -1;
     }
 
     reset() {
         this.inPlay = false;
         this.position = new Vec((canvasWidth / 2) - 10, canvasHeight - 100);
+        this.velocity = new Vec(0, 0);
+    }
+}
+
+
+class Ball2 extends GameObject {
+    constructor(position, width, height, color) {
+        super(position, width, height, color, "ball");
+        this.velocity = new Vec(0, 0); 
+        this.reset();
+    }
+
+    update(deltaTime) {
+        this.position = this.position.plus(this.velocity.times(deltaTime));
+    }
+
+    initVelocity() {
+        this.inPlay = true;
+   
+        let angle = Math.PI / 4; // 45 grados en radianes
+        this.velocity = new Vec(Math.cos(angle), -Math.sin(angle)).times(initialSpeed);
+    
+        this.velocity.x *= (Math.random() < 0.5) ? 1 : -1;
+    }
+
+    reset() {
+        this.inPlay = false;
+        this.position = new Vec((canvasWidth / 4) - 10, canvasHeight - 100);
         this.velocity = new Vec(0, 0);
     }
 }
@@ -113,16 +164,46 @@ class Paddle extends GameObject {
     }
 }
 
+// Función para mostrar la pantalla de Game Over
+function mostrarGameOverWin() {
+    console.log("Game over")
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight); 
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, canvasWidth, canvasHeight); 
+
+    ctx.fillStyle = "white"; 
+    ctx.font = "48px Arial"; 
+    ctx.textAlign = "center"; 
+    ctx.fillText("Game Over", canvasWidth / 2, canvasHeight / 2 - 20); 
+    ctx.font = "24px Arial"; 
+    ctx.fillText("Presiona F5 para reiniciar", canvasWidth / 2, canvasHeight / 2 + 20);
+}
+function mostrarGameOver() {
+    console.log("Felicidades Ganaste")
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight); 
+    ctx.fillStyle = "black"; 
+    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+
+    ctx.fillStyle = "white"; 
+    ctx.font = "48px Arial"; 
+    ctx.textAlign = "center";
+    ctx.fillText("Game Over", canvasWidth / 2, canvasHeight / 2 - 20); 
+    ctx.font = "24px Arial";
+    ctx.fillText("Presiona F5 para reiniciar", canvasWidth / 2, canvasHeight / 2 + 20); 
+}
 function drawScene(newTime) {
-    if (oldTime === undefined) {
+    if (oldTime == undefined) {
         oldTime = newTime;
     }
-    let deltaTime = (newTime - oldTime) / 1000; // Convertir a segundos
+    let deltaTime = (newTime - oldTime) / 1000; 
     oldTime = newTime;
 
     // Limpiar el canvas
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-
+    if (vidas <= 0) {
+        mostrarGameOver(); // Mostrar pantalla de Game Over
+        return; // Detener el bucle de juego
+    }
     // Dibujar objetos
     
     barraSuperior.draw(ctx);
@@ -131,6 +212,14 @@ function drawScene(newTime) {
     porteriaDer.draw(ctx);
     mainPaddle.draw(ctx);
     box.draw(ctx);
+
+    if (player2Active) {
+        secondaryPaddle.draw(ctx);
+        secondaryBox.draw(ctx);
+        secondaryBox.update(deltaTime);
+       
+        secondaryPaddle.update(deltaTime);
+    }
 
     // Actualizar objetos
     box.update(deltaTime);
@@ -149,36 +238,114 @@ function drawScene(newTime) {
         console.log("Colisión con portería");
         box.velocity.x *= -1;
     }
-    if (boxOverlap(box, barraSuperior) || boxOverlap(box, barraInferior) ) {
+    if (boxOverlap(box, barraSuperior)   ) {
 
         box.velocity.y *= -1;
     }
-    if (boxOverlap(box, mainPaddle)) {
+    if (boxOverlap(box, mainPaddle) ) {
         console.log("Colisión con la paleta");
     
         let relativeIntersectX = (box.position.x + box.width / 2) - (mainPaddle.position.x + mainPaddle.width / 2);
         let normalizedIntersectX = relativeIntersectX / (mainPaddle.width / 2);
-        let angle = normalizedIntersectX * (Math.PI / 3); // Ángulo entre -60° y 60°
-        let speed = box.velocity.magnitude() ; // Usar magnitude() en lugar de length
+        let angle = normalizedIntersectX * (Math.PI / 3); 
+        let speed = box.velocity.magnitude() ; 
     
         box.velocity = new Vec(Math.cos(angle), -Math.abs(Math.sin(angle))).times(speed);
     }
+
+    if (player2Active) {
+        if ( boxOverlap(box, secondaryPaddle) ) {
+            console.log("Colisión con la paleta");
+        
+            let relativeIntersectX = (box.position.x + box.width / 2) - (mainPaddle.position.x + mainPaddle.width / 2);
+            let normalizedIntersectX = relativeIntersectX / (mainPaddle.width / 2);
+            let angle = normalizedIntersectX * (Math.PI / 3);
+            let speed = box.velocity.magnitude() ; 
+        
+            box.velocity = new Vec(Math.cos(angle), -Math.abs(Math.sin(angle))).times(speed);
+        }
+    }
+
+
+    if (boxOverlap(secondaryBox, porteriaIz) || boxOverlap(secondaryBox, porteriaDer)) {
+        console.log("Colisión con portería");
+        secondaryBox.velocity.x *= -1;
+    }
+    if (boxOverlap(secondaryBox, barraSuperior)   ) {
+
+        secondaryBox.velocity.y *= -1;
+    }
+    if (boxOverlap(secondaryBox, secondaryPaddle) ||boxOverlap(secondaryBox, mainPaddle) ) {
+        console.log("Colisión con la paleta");
+    
+        let relativeIntersectX = (box.position.x + box.width / 2) - (mainPaddle.position.x + mainPaddle.width / 2);
+        let normalizedIntersectX = relativeIntersectX / (mainPaddle.width / 2);
+        let angle = normalizedIntersectX * (Math.PI / 3); 
+        let speed = box.velocity.magnitude() ; 
+    
+        secondaryBox.velocity = new Vec(Math.cos(angle), -Math.abs(Math.sin(angle))).times(speed);
+    }
+
+    //El jugador perdió
+    if ( boxOverlap(box, barraInferior) ) {
+
+        vidas = vidas -1;
+        resetGameBall1();
+        console.log(vidas);
+
+    }
+    //El jugador perdió
+    if ( boxOverlap(secondaryBox, barraInferior) ) {
+
+        vidas = vidas -1;
+        resetGameBall2();
+        console.log(vidas);
+
+    }
+
+
 
 
     checkBrickCollisions();
 
     box.update(deltaTime);
+      
+    secondaryBox.update(deltaTime);
+
+    if (player2Active) {
+   
+
+    }
+     // Dibujar el puntaje
+     ctx.fillStyle = "white";
+     ctx.font = "24px Arial";
+     ctx.textAlign = "left";
+     ctx.fillText("Bloques Destruidos: " + score +"  Vidas: " + vidas, 20, 30); 
+     ctx.fillText("Presiona 2 para activar el jugador 2", 20, 60); 
+
     // Continuar el bucle del juego
     requestAnimationFrame(drawScene);
 }
 
 function createEventListeners() {
     window.addEventListener("keydown", (event) => {
-  
+        if (event.key === "2" ) {
+            if (!player2Active) {
+                player2Active = true;
+                resetGameBall2();
+            }
+
+        }
          if (event.key === "o" || event.code === "ArrowLeft") {
             mainPaddle.velocity = new Vec( -paddleVelocity,0);
         } else if (event.key === "l" || event.code === "ArrowRight") {
             mainPaddle.velocity = new Vec( paddleVelocity, 0);
+        }
+
+        if ( event.code === "KeyA") {
+            secondaryPaddle.velocity = new Vec( -paddleVelocity,0);
+        } else if ( event.code === "KeyD") {
+            secondaryPaddle.velocity = new Vec( paddleVelocity, 0);
         }
     });
 
@@ -189,6 +356,12 @@ function createEventListeners() {
         } else if (event.key === "l" || event.code === "ArrowRight") {
             mainPaddle.velocity = new Vec(0, 0);
         }
+
+        if ( event.code === "KeyA") {
+            secondaryPaddle.velocity = new Vec(0, 0);
+        } else if ( event.code === "KeyD") {
+            secondaryPaddle.velocity = new Vec(0, 0);
+        }
     });
 }
 
@@ -197,6 +370,9 @@ function createEventListeners() {
 const barraSuperior = new Paddle(new Vec(0, 0), canvasWidth, 10, "white");
 const barraInferior = new Paddle(new Vec(0, canvasHeight - 10), canvasWidth, 10, "white");
 const mainPaddle = new Paddle(new Vec((canvasWidth / 2) - 50, canvasHeight - 50), 100, 20, "white");
+
+const secondaryPaddle = new Paddle(new Vec((canvasWidth / 4) - 50, canvasHeight - 50), 100, 20, "white");
+const secondaryBox = new Ball2(new Vec((canvasWidth / 4) - 10, canvasHeight - 100), 20, 20, "white");
 const porteriaIz = new Paddle(new Vec(0, 0), 10, canvasHeight, "white");
 const porteriaDer = new Paddle(new Vec(canvasWidth - 10, 0), 10, canvasHeight, "white");
 
@@ -211,12 +387,38 @@ function main() {
 
     // Inicializar velocidad de la pelota
     box.initVelocity();
-    // Agregar eventos de teclado
+
+    if (player2Active) {
+        secondaryBoxbox.initVelocity();
+    }
+  
     createEventListeners();
 
-    // Iniciar el bucle del juego
     drawScene(0);
 }
 
 // Llamar a main cuando la página cargue
 window.onload = main;
+
+function resetGameBall1() {
+    box.reset(); 
+    setTimeout(() => {
+        // Restablecer la posición y velocidad de la pelota
+     
+        box.initVelocity();
+        box.color= "red";
+        drawScene(0);
+    }, 2000); 
+}
+
+
+function resetGameBall2() {
+    secondaryBox.reset(); 
+    setTimeout(() => {
+        // Restablecer la posición y velocidad de la pelota
+     
+        secondaryBox.initVelocity();
+        secondaryBox.color= "red";
+        drawScene(0);
+    }, 2000); 
+}

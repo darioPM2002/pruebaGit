@@ -1,0 +1,39 @@
+
+#Darío Cuauhtémoc Peña Mariano
+#Tecnológico de Monterrey
+#11 de marzo de 2025
+#Ejercicio creación de videojuego brick breaker
+
+
+
+#Como mi proyecto NO LLEVA ARCHIVOS POR IGNORAR PUSE UNA PLANTILLA
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de log
+*.log
+
+# Ignorar dependencias de Node.js (si usas Node.js)
+node_modules/
+
+# Ignorar archivos de compilación o temporales
+*.tmp
+*.swp
+*.bak
+
+# Ignorar archivos de configuración específicos de IDEs
+.vscode/
+.idea/
+
+# Ignorar archivos de compilación (si trabajas con C++, Java, etc.)
+*.class
+*.o
+*.out
+
+# Ignorar archivos de configuración de sistemas operativos
+Desktop.ini
+
+# Archivos y carpetas que contienen información sensible (como claves de API)
+*.env
