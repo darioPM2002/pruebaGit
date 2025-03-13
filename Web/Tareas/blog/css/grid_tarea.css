@@ -1,0 +1,177 @@
+body{
+    background-color: grey;
+    height: 100vh;
+}
+
+.gridClass1{
+    color: white;
+
+    background-color: aquamarine;
+    padding: 10px;
+    border: 3px solid white;
+
+}
+
+
+.gridClass2{
+    color: white;
+
+    background-color: palegreen;
+    padding: 10px;
+    border: 3px solid white;
+
+}
+
+
+.gridClass3{
+    color: white;
+
+    background-color: beige;
+    padding: 10px;
+    border: 3px solid white;
+
+}
+
+
+.gridClass4{
+    color: white;
+
+    background-color: bisque;
+    padding: 10px;
+    border: 3px solid white;
+
+}
+
+
+.gridClass5{
+    color: white;
+
+    background-color: blanchedalmond;
+    padding: 10px;
+    border: 3px solid white;
+
+}
+
+
+.gridClass6{
+    color: white;
+
+    background-color: cadetblue;
+    padding: 10px;
+    border: 3px solid white;
+
+}
+.gridContainer1{
+    height: calc(95% - 1px);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+
+}
+
+
+.gridContainer2{
+    height: calc(95% - 1px);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr;
+    gap: 10px;
+
+    grid-template-areas: 
+    "header header header"
+    "side center center"
+    "side . ."
+
+}
+
+#gridItem1{
+    grid-area:  header ;
+}
+
+#gridItem2{
+    grid-area:  side ;
+}
+
+#gridItem3{
+    grid-area:  center ;
+}
+
+
+
+
+
+.gridContainer3{
+    height: calc(95% - 1px);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 2fr 1fr;
+    gap: 10px;
+
+    grid-template-areas: 
+    "header1 header1 header1 header2 header2 header2"
+    "side1 side1 center1 center1 center1 center1"
+    "end end end end end end"
+
+}
+
+#gridItem4{
+    grid-area:  header1 ;
+}
+
+#gridItem5{
+    grid-area:  header2;
+}
+
+#gridItem6{
+    grid-area:  side1 ;
+}
+
+#gridItem7{
+    grid-area:  center1 ;
+}
+
+#gridItem8{
+    grid-area:  end ;
+}
+
+
+
+
+
+.gridContainer4{
+    height: calc(95% - 1px);
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 3fr ;
+    gap: 10px;
+
+
+}
+
+
+
+.gridContainer5{
+    height: calc(100% - 1px);
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr ;
+    gap: 10px;
+
+    grid-template-areas: 
+    "header3 header3"
+    ". . ";
+}
+
+#gridItem9{
+    grid-area:  header3 ;
+}
+
+
+
+
+    .titulosCentrados{
+
+        text-align: center;
+        
+    }
